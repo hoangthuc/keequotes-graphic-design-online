@@ -651,7 +651,7 @@
                 });
                 mainCanvas.add(cloned);
                 mainCanvas.setActiveObject(cloned);
-                mainCanvas.renderAll();
+                mainCanvas.requestRenderAll();
             });
         }
         else if (activeGroup) {
@@ -662,7 +662,7 @@
                     evented: true
                 });
                 mainCanvas.add(cloned2);
-                mainCanvas.renderAll();
+                mainCanvas.requestRenderAll();
             });
         }
     }
@@ -797,47 +797,47 @@
         $("#zoomout").click(zoomout);
 
 
-//Add Text
-        $("#addtext").on("click", function(e) {
-            text = new fabric.IText("Text", {
-                id: "cardalltexthex",
-                fontSize: 32,
-                selectable: true,
-                left: 400,
-                top: 100,
-                text: "Add A New Short Text",
-                fill: '#333',
-                opacity :1,
-                lineHeight: 1,
-                textAlign: 'center',
-                originY: 'center',
-                originX: 'center',
-                lockUniScaling: false,
-                fontFamily: 'Anton'
-            });
-            mainCanvas.add(text);
-        });
+        //Add Text
+                $("#addtext").on("click", function(e) {
+                    text = new fabric.IText("Text", {
+                        id: "cardalltexthex",
+                        fontSize: 32,
+                        selectable: true,
+                        left: 400,
+                        top: 100,
+                        text: "Add A New Short Text",
+                        fill: '#333',
+                        opacity :1,
+                        lineHeight: 1,
+                        textAlign: 'center',
+                        originY: 'center',
+                        originX: 'center',
+                        lockUniScaling: false,
+                        fontFamily: 'Anton'
+                    });
+                    mainCanvas.add(text);
+                });
 
-        $("#addtextbox").on("click", function(e) {
-            var t1 = new fabric.Textbox('Add A New\nLong Text', {
-                fill: '#666',
-                width: 350,
-                selectable: true,
-                left: 400,
-                top: 100,
-                fontSize: 42,
-                textAlign: 'center',
-                originY: 'center',
-                originX: 'center',
-                fixedWidth: 350,
-                lockUniScaling: false,
-                fontFamily: 'Open Sans',
-            });
+                $("#addtextbox").on("click", function(e) {
+                    var t1 = new fabric.Textbox('Add A New\nLong Text', {
+                        fill: '#666',
+                        width: 350,
+                        selectable: true,
+                        left: 400,
+                        top: 100,
+                        fontSize: 42,
+                        textAlign: 'center',
+                        originY: 'center',
+                        originX: 'center',
+                        fixedWidth: 350,
+                        lockUniScaling: false,
+                        fontFamily: 'Open Sans',
+                    });
 
-            mainCanvas.add(t1);
-        });
+                    mainCanvas.add(t1);
+                });
 
-//Delect Objects
+        //Delect Objects
         $("#remove").click(removeObjects);
 
 //Group object
@@ -927,106 +927,105 @@ function search_template(event,slug='/products',query='&search=') {
     };
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
         setup_list_item_product(response,'#template .sidebarpost','select_template');
     });
 }
 
-    //Load JSON
+//Load JSON
 function select_template(event){
-    let product = $(event).data('product');
-    let slug = (product=='user')?'/user/products':'/products';
-    load_json( $(event).attr('data-id'),slug ).then(Datajson=>{
-        $('.form_add_new_product [name="product_name"]').val(Datajson.result.name);
-        Datajson=JSON.parse(Datajson.result.data);
-        console.log(Datajson);
-        setting.json_active = setting.json_download = Datajson
-        let Datawidth = Datajson.width;
-        let DataHeight = Datajson.height;
-        back_step('.display-products','#card-design-online');
-        document.querySelector('#canvas1').setAttribute('width',Datawidth);
-        document.querySelector('#canvas2').setAttribute('width',Datawidth);
-        document.querySelector('#canvas1').setAttribute('height',DataHeight);
-        document.querySelector('#canvas2').setAttribute('height',DataHeight);
-        document.querySelector('#templatemessage').setAttribute('data-id', $(event).attr('data-id') );
-        var dataToLoad = Datajson;
-        canvas1.loadFromJSON(
-            dataToLoad.c1,
-            canvas1.renderAll.bind(canvas1),
-        );
-        canvas2.loadFromJSON(
-            dataToLoad.c2,
-            canvas2.renderAll.bind(canvas2),
-        );
-        canvas1.setZoom(canvas1.getZoom() * 1);
-        canvas2.setZoom(canvas2.getZoom() * 1);
-        var originalWidth = Datajson.width;
-        var originalHeight = Datajson.height;
-        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        var height = (window.innerHeight > 0) ? window.innerHeight : screen.Height;
-        var widthRatio = width / originalWidth;
-        var heightRatio = height / originalHeight;
-        if (screen.width < 700) {
-        canvas1.setZoom(canvas1.getZoom() * widthRatio * 0.9);
-        canvas1.setDimensions({
-        width: canvas1.width * widthRatio * 0.9,
-        height: canvas1.height * widthRatio * 0.9,
-        });
-        canvas2.setZoom(canvas2.getZoom() * widthRatio * 0.9);
-        canvas2.setDimensions({
-        width: canvas2.width * widthRatio * 0.9,
-        height: canvas2.height * widthRatio * 0.9,
-        });
-        }
-    
-        else {
-    		if (originalWidth > originalHeight) {
-        canvas1.setZoom(canvas1.getZoom() * widthRatio * 0.6);
-        canvas1.setDimensions({
-        width: originalWidth * widthRatio * 0.6,
-        height: originalHeight * widthRatio * 0.6,
-        });
-        canvas2.setZoom(canvas2.getZoom() * widthRatio * 0.6);
-        canvas2.setDimensions({
-        width: originalWidth * widthRatio * 0.6,
-        height: originalHeight * widthRatio * 0.6,
-        });
-        }
-        else {
-        canvas1.setZoom(canvas1.getZoom() * heightRatio * 0.8);
-        canvas1.setDimensions({
-        width: originalWidth * heightRatio * 0.8,
-        height: originalHeight * heightRatio * 0.8,
-        });
-        canvas2.setZoom(canvas2.getZoom() * heightRatio * 0.8);
-        canvas2.setDimensions({
-        width: originalWidth * heightRatio * 0.8,
-        height: originalHeight * heightRatio * 0.8,
-        });
-        }
-        }
-        $(".overlayeditcanvas").hide(200);
-        $(".general-function, a.continue_template").show(200);
-        $(".tools").show(200);
-        $('#templatemessage').keyup();
-        setup_json(Datajson);
+let product = $(event).data('product');
+let slug = (product=='user')?'/user/products':'/products';
+load_json( $(event).attr('data-id'),slug ).then(Datajson=>{
+    $('.form_add_new_product [name="product_name"]').val(Datajson.result.name);
+    Datajson=JSON.parse(Datajson.result.data);
+    console.log(Datajson);
+    setting.json_active = setting.json_download = Datajson
+    let Datawidth = Datajson.width;
+    let DataHeight = Datajson.height;
+    back_step('.display-products','#card-design-online');
+    document.querySelector('#canvas1').setAttribute('width',Datawidth);
+    document.querySelector('#canvas2').setAttribute('width',Datawidth);
+    document.querySelector('#canvas1').setAttribute('height',DataHeight);
+    document.querySelector('#canvas2').setAttribute('height',DataHeight);
+    document.querySelector('#templatemessage').setAttribute('data-id', $(event).attr('data-id') );
+    var dataToLoad = Datajson;
+    canvas1.loadFromJSON(
+        dataToLoad.c1,
+        canvas1.renderAll.bind(canvas1),
+    );
+    canvas2.loadFromJSON(
+        dataToLoad.c2,
+        canvas2.renderAll.bind(canvas2),
+    );
+    canvas1.setZoom(canvas1.getZoom() * 1);
+    canvas2.setZoom(canvas2.getZoom() * 1);
+    var originalWidth = Datajson.width;
+    var originalHeight = Datajson.height;
+    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    var height = (window.innerHeight > 0) ? window.innerHeight : screen.Height;
+    var widthRatio = width / originalWidth;
+    var heightRatio = height / originalHeight;
+    if (screen.width < 700) {
+    canvas1.setZoom(canvas1.getZoom() * widthRatio * 0.9);
+    canvas1.setDimensions({
+    width: canvas1.width * widthRatio * 0.9,
+    height: canvas1.height * widthRatio * 0.9,
     });
-    if(product == 'demo'){
-        $('.save_product_c').hide();
-    }else {
-        $('.save_product_c').show();
+    canvas2.setZoom(canvas2.getZoom() * widthRatio * 0.9);
+    canvas2.setDimensions({
+    width: canvas2.width * widthRatio * 0.9,
+    height: canvas2.height * widthRatio * 0.9,
+    });
     }
+
+    else {
+    if (originalWidth > originalHeight) {
+    canvas1.setZoom(canvas1.getZoom() * widthRatio * 0.6);
+    canvas1.setDimensions({
+    width: originalWidth * widthRatio * 0.6,
+    height: originalHeight * widthRatio * 0.6,
+    });
+    canvas2.setZoom(canvas2.getZoom() * widthRatio * 0.6);
+    canvas2.setDimensions({
+    width: originalWidth * widthRatio * 0.6,
+    height: originalHeight * widthRatio * 0.6,
+    });
+    }
+    else {
+    canvas1.setZoom(canvas1.getZoom() * heightRatio * 0.8);
+    canvas1.setDimensions({
+    width: originalWidth * heightRatio * 0.8,
+    height: originalHeight * heightRatio * 0.8,
+    });
+    canvas2.setZoom(canvas2.getZoom() * heightRatio * 0.8);
+    canvas2.setDimensions({
+    width: originalWidth * heightRatio * 0.8,
+    height: originalHeight * heightRatio * 0.8,
+    });
+    }
+    }
+    $(".overlayeditcanvas").hide(200);
+    $(".general-function, a.continue_template").show(200);
+    $(".tools").show(200);
+    $('#templatemessage').keyup();
+    setup_json(Datajson);
+});
+if(product == 'demo'){
+    $('.save_product_c').hide();
+}else {
+    $('.save_product_c').show();
+}
 }
 async function load_json(id,slug='/products'){
-    var settings = {
-        "url": setting.URL_API+slug+'/'+id+'/detail?license_key='+setting.K_API,
-        "method": "GET",
-        "timeout": 0,
-        "headers": {
-            "Accept": "application/json",
-        },
-    };
-    return $.ajax(settings).done(function (response) {});
+var settings = {
+    "url": setting.URL_API+slug+'/'+id+'/detail?license_key='+setting.K_API,
+    "method": "GET",
+    "timeout": 0,
+    "headers": {
+        "Accept": "application/json",
+    },
+};
+return $.ajax(settings).done(function (response) {});
 }
 
 function open_form_save(){
@@ -1074,7 +1073,7 @@ function open_form_save(){
              showConfirmButton: false,
              timer: 1500
          });
-         location.reload();
+         back_step('.overUpdateProduct','#card-design-online');
      });
 }
 async function add_canvas(){
@@ -1097,6 +1096,23 @@ async function upload_img(dataToLoad){
             })
 
         }
+
+        /// for groups svg
+        if(el.type == 'group'){
+            el.objects.forEach(elg=>{
+                if(elg.type =='image' && !isBase64(elg.src)){
+                    pause++;
+                    getBase64FromUrl(elg.src).then(base=>{
+                        elg.src = base;
+                        upload_img(dataToLoad );
+                    })
+
+                }
+            })
+
+        }
+
+
     });
 /// for background image
     if(dataToLoad.c2.backgroundImage){
@@ -1109,7 +1125,7 @@ async function upload_img(dataToLoad){
         }
     }
 
-    /// for background image 2
+        /// for background image 2
     if(dataToLoad.c2.background){
         if(dataToLoad.c2.background.type == 'pattern' && !isBase64(dataToLoad.c2.background.source)){
             pause++;
@@ -1344,7 +1360,7 @@ function create_product(event){
             showConfirmButton: false,
             timer: 1500
         });
-        location.reload();
+        back_step('.overUpdateProduct','#card-design-online');
     });
 }
 
@@ -1354,7 +1370,7 @@ function click_get_products(event){
     let slug = $(event).data('slug');
     let insert = document.querySelector( $(event).data('insert') );
     insert.innerHTML= '';
-    $('.control_main > h2').removeClass('active');
+    $('.control_main > a').removeClass('active');
     $(event).addClass('active');
     var settings = {
         "url": setting.URL_API+slug+"?license_key="+setting.K_API,
@@ -1434,10 +1450,14 @@ function insert_canvas(event){
                 };
 
                 $.ajax(settings).done(function (response) {
-                    console.log(response);
-                    var myContent = tinymce.editors[0].getContent();
-                    // tinymce.editors[0].setContent("<p>Hello world!</p>");
-                    tinymce.editors[0].execCommand('mceInsertContent', false, '<img src="'+response+'">');
+                   // var i = document.querySelector('#add-design-editor').getAttribute('data-number');
+                   // var myContent = tinymce.editors[i].getContent();
+                    var img = document.createElement('img');
+                    img.src = response;
+                   // tinymce.editors[i].execCommand('mceInsertContent', true, img.outerHTML);
+                  // /  console.log(myContent);
+                  // / tinymce.editors[i].setContent(myContent+img.outerHTML);
+                    wp.media.editor.insert(img.outerHTML );
                     $('#TB_closeWindowButton').click();
                 });
             }else{
@@ -1448,11 +1468,11 @@ function insert_canvas(event){
 
     /// use for web
 function load_template_data_product(Data=''){
-        var Datajson = {"width":800,"height":1120,"c1":{"objects":[]},"c2":{"objects":[]},"background":"transparent"};
+        var Datajson = {"width":800,"height":1120,"c1":{"objects":[]},"c2":{"objects":[],"background":"transparent"}};
         console.log(Datajson);
-         setting.json_active = setting.json_download = Datajson;
         let Datawidth = Datajson.width;
         let DataHeight = Datajson.height;
+         setting.json_active = setting.json_download = Datajson;
         back_step('.display-products','#card-design-online');
         document.querySelector('#canvas1').setAttribute('width',Datawidth);
         document.querySelector('#canvas2').setAttribute('width',Datawidth);
@@ -1555,23 +1575,18 @@ function edit_resize(){
     setting.json_active.width =  $('#canvaswidth').val();
     setting.json_active.height =  $('#canvasheight').val();
     $('.overlayresize').hide(200);
-    canvas1.setWidth( setting.json_active.width );
-    canvas1.setHeight( setting.json_active.height );
-    canvas1.calcOffset();
-    canvas2.setWidth( setting.json_active.width );
-    canvas2.setHeight( setting.json_active.height );
-    canvas2.calcOffset();
 }
 
 function refresh_img(){
     $('.form_add_new_product img').attr('src',canvas_image.toDataURL());
 }
 
-function download_canvas(){
+function download_canvas(event){
     var dataToLoad = { c1:canvas1.toJSON(),c2:canvas2.toJSON()} ;
     setting.json_active.c1 = canvas1.toJSON();
     setting.json_active.c2 = canvas2.toJSON();
     upload_img(dataToLoad);
+    $('.download_images > i').show(100);
     setTimeout(function(){
         var dataURL = canvas_image.toDataURL();
         var name = 'mat-truoc';
@@ -1580,6 +1595,7 @@ function download_canvas(){
         var dataURL = c.toDataURL();
         var name = 'mat-sau';
         download(dataURL, name + ".png");
+        $('.download_images > i').hide();
     },2000);
 
 }
@@ -1605,10 +1621,11 @@ function changeColorSolid(event){
             });
         }
     }
+//how to add custom button in tinymce wp gutenberg
+//https://1stwebdesigner.com/how-to-add-custom-buttons-to-the-wordpress-tinymce-editor/
 
-
-function setColorsolid(event){
-        var color = $(event).attr('data-color');
+    function setColorsolid(event){
+       var color = $(event).attr('data-color');
         var activeObject = mainCanvas.getActiveObject(),
             activeGroup = mainCanvas.getActiveGroup();
         if (activeObject) {
@@ -1622,4 +1639,4 @@ function setColorsolid(event){
                 mainCanvas.renderAll();
             });
         }
-}
+    }

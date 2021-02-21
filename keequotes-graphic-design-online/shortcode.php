@@ -1,11 +1,10 @@
 <?php
-
 do_action('CD_enqueue_scripts');
 $check = check_license_plugin(KGDO_K_API);
 $date = date('Y-m-d');
 $li = $check->license->ended_at;
 if($li<$date){
-echo '<div>Welcome back!<br/> <a href="admin.php?page=setting_plugin">Log in</a> with your account on Setting and use the Editor to edit Templates here.';
+echo 'Welcome back!<br/> <a href="admin.php?page=setting_plugin">Log in</a> with your account on Setting and use the Editor to edit Templates here.';
 }
 ?>
 <div class="display-products content" style="min-height: 100vh; position: relative; z-index: 9; background-color: #fff">
@@ -132,4 +131,3 @@ echo '<div>Welcome back!<br/> <a href="admin.php?page=setting_plugin">Log in</a>
        'img_src': '<?php echo KGDO_CD_URL.'/images/8.jpg' ?>',
     };
 </script>
-
