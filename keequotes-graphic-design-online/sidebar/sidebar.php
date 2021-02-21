@@ -64,9 +64,9 @@
 
 <div id="text" class="tabcontent" data-product-group="text" data-slug="/text-types">
   <label>Texts</label>
-    <br>Chữ cơ bản<br>
-    <a href="javascript:{}" data-text="text" id="addtext"><h3>Thêm một dòng văn bản</h3></a>
-    <a href="javascript:{}" data-text="textbox" id="addtextbox"><h4>Thêm một đoạn văn bản</h4></a>
+    <br>Basic Text<br>
+    <a href="javascript:{}" data-text="text" id="addtext"><h3>Add a short text</h3></a>
+    <a href="javascript:{}" data-text="textbox" id="addtextbox"><h4>Add a paragraph</h4></a>
     <div data-loop="type" data-slug="/text-categories" data-cat="text_type_id">
         <div class="content"></div>
     </div>
@@ -95,7 +95,7 @@
     </div>
     </div>
 </div>
-    
+
 <script>
 function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
@@ -117,4 +117,3 @@ function openPage(pageName,elmnt,color) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
-
