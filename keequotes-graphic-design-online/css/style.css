@@ -95,6 +95,7 @@ img, video {
     color: #333;
     border-left: solid 0.5px #eee;
     z-index: 9;
+	overflow: auto;
     }
 .tools-colors {
     background: #fff;
