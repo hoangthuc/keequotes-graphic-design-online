@@ -102,11 +102,7 @@ body {
     color: #333;
     border-left: solid 0.5px #eee;
     z-index: 9;
-<<<<<<< Updated upstream
-	overflow: auto;
-=======
     overflow: auto;
->>>>>>> Stashed changes
     }
 .tools-colors {
     background: #fff;
@@ -1062,8 +1058,6 @@ body .swal2-container{
 .list_item_color_solid{
     margin-top: 15px;
 }
-<<<<<<< Updated upstream
-=======
 
 
 @media (max-width: 768px){
@@ -1096,4 +1090,3 @@ body .swal2-container{
     white-space: nowrap;
 }
 }
->>>>>>> Stashed changes
