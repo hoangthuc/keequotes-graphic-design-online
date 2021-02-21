@@ -8,10 +8,6 @@ Version: 1.02
 */
 /*Header*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-img, video {
-    max-width: 100%;
-    vertical-align: middle;
-}
 .header {
 	width: 100%;
 	height:50px;
@@ -40,13 +36,24 @@ img, video {
 
 /*Body*/
 
+body {
+	background: #fff;
+	color: #666666;
+	font-size: 15px;
+	font-family: 'Open Sans';
+	margin: 0px auto 0px;
+	padding: 0px;
+	height: auto;
+	width: 100%;
+	font-family: 'Open Sans';
+	}
 .ml-3{
     margin-left: 15px;
 }
 #card-design-online .left {
     background: #f7f7f7;
-    position: fixed;
-    top: 90px;
+    position: absolute;
+    top: 57px;
     bottom: 0;
     width: 240px;
     color: #333;
@@ -54,8 +61,8 @@ img, video {
     }
 .tools {
     background: #fff;
-    position: fixed;
-    top: 90px;
+    position: absolute;
+    top: 57px;
     bottom: 0;
     right:0;
     width: 60px;
@@ -65,8 +72,8 @@ img, video {
     }
 .tools-details {
     background: #fff;
-    position: fixed;
-    top: 90px;
+    position: absolute;
+    top: 57px;
     bottom: 0;
     right:60px;
     width: 60px;
@@ -76,8 +83,8 @@ img, video {
     }
 .tools-fonts-style {
     background: #fff;
-    position: fixed;
-    top: 90px;
+    position: absolute;
+    top: 57px;
     bottom: 0;
     right:60px;
     width: 60px;
@@ -87,22 +94,26 @@ img, video {
     }
 .tools-fonts {
     background: #fff;
-    position: fixed;
-    top: 90px;
+    position: absolute;
+    top: 57px;
     bottom: 0;
     right:60px;
     width: 160px;
     color: #333;
     border-left: solid 0.5px #eee;
     z-index: 9;
+<<<<<<< Updated upstream
 	overflow: auto;
+=======
+    overflow: auto;
+>>>>>>> Stashed changes
     }
 .tools-colors {
     background: #fff;
 	padding:10px;
-    position: fixed;
-    top: 90px;
-    height: 300px;
+    position: absolute;
+    top: 57px;
+    height: auto;
     right: 60px;
     width: 280px;
     color: #333;
@@ -113,20 +124,21 @@ img, video {
 .tools-fonts-details {
     padding:10px;
     background: #fff;
-    position: fixed;
-    top: 90px;
-    height: 320px;
+    position: absolute;
+    top: 57px;
+    height: auto;
     right:60px;
     width: 160px;
     color: #333;
     border-right: solid 0.5px #eee;
     z-index: 9;
+    overflow: auto;
     }
 .tools-fonts-effects {
     padding:10px;
     background: #fff;
-    position: fixed;
-    top: 90px;
+    position: absolute;
+    top: 57px;
     height: 1320px;
     right:60px;
     width: 160px;
@@ -228,11 +240,11 @@ img, video {
     }
 .right-canvas {
     background: #eee;
-    position: fixed;
-    top: 90px;
+    position: absolute;
+    top: 57px;
     right: 55px;
     bottom: 0;
-    width: calc(100% - 475px);
+    width: calc(100% - 300px);
     color: #000;
     overflow: hidden;
     padding-top: 10px;
@@ -258,7 +270,12 @@ img, video {
   width: 100%;
   height: auto;
     }
+[data-product-group] .content img{
+    width: 100%;
+}
 .blogcontent {
+  margin: 30px auto 0px;
+  margin-left:20px;
   padding: 0;
   height: auto;
 }
@@ -554,6 +571,7 @@ input {
 
 /*Sidebard*/
 .sidebar {width: 100%;}
+* {box-sizing: border-box}
 
 /* Style tab links */
 .tablink a {
@@ -632,12 +650,9 @@ input {
   cursor: pointer;
 }
 
-@media screen and (max-width: 767px) {
-/* start of medium tablet styles */
+@media (max-width: 769px) {
+  /* start of medium tablet styles */
 .login {width:80%;}
-}
-
-@media screen and (max-width: 479px) {
 /* start of phone styles */
 #canvas {margin: 0 auto 0;}
 .rangeslider {
@@ -656,11 +671,13 @@ select#colorpostid {
     width: 92%;
 }
 .tools {
+  position: fixed !important;
     width:100%;
     top: calc(100% - 50px);
     border-top: solid 0.5px #eee;
     }
 .tools-details {
+    position: fixed;
     width:100%;
     right:0;
     top: calc(100% - 100px);
@@ -668,6 +685,7 @@ select#colorpostid {
     border-top: solid 0.5px #eee;
     }
 .tools-fonts-style {
+    position: fixed;
     width:100%;
     right:0;
     top: calc(100% - 100px);
@@ -675,6 +693,7 @@ select#colorpostid {
     border-top: solid 0.5px #eee;
     }
 .tools-fonts {
+    position: fixed;
     width:100%;
     right:0;
     top: calc(100% - 100px);
@@ -682,13 +701,16 @@ select#colorpostid {
     border-top: solid 0.5px #eee;
     }
 .tools-colors {
+    position: fixed;
     width:100%;
     right:0;
-    top: calc(100% - 200px);
+    top: calc(100% - 300px);
     border-top: solid 0.5px #eee;
     bottom:50px;
     }
+
 .tools-fonts-details {
+    position: fixed;
     width:100%;
     right:0;
     top: calc(100% - 350px);
@@ -696,6 +718,7 @@ select#colorpostid {
     border-top: solid 0.5px #eee;
     }
 .tools-fonts-effects {
+    position: fixed;
     width:100%;
     right:0;
     top: calc(100% - 350px);
@@ -839,7 +862,7 @@ text-align: center;
     padding-top: 10px;
 }
 .custom_color input{
-    width: 100%;
+     width: 100%;
     margin: 10px 0;
     height: 34px;
     position: relative;
@@ -859,27 +882,26 @@ text-align: center;
     width: 200px;
 }
 .control_main{
-    text-align: left;
+    text-align: center;
     display: block;
+    background-color: #f2f2f2;
+    padding: 15px 10px;
     position: relative;
-    background-color: #0e4477;
-    height: 30px;
-    padding: 13px 10px;
-
 }
-.control_main > a{
+.control_main > h2{
     display: inline-block;
     text-transform: uppercase;
     font-size: 18px;
-    font-weight: bold;
-    margin-right: 20px;
+    margin: 0 10px;
+    padding: 8px 30px;
     border-radius: 3px;
-    color: #fff;
+    color: #000;
     cursor: pointer;
 }
-.control_main > a:hover,
-.control_main > a.active{
-    color: #6da742;
+.control_main > h2:hover,
+.control_main > h2.active{
+    background-color: #0073aa;
+    color: #fff;
 }
 
 .brick.add-new-product{
@@ -919,7 +941,17 @@ span.delete-product:hover {
     text-shadow: 0px 0px 3px #ffffff40;
 }
 a.continue_template{
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
     text-decoration: none;
+}
+a.continue_template:hover{
+    color: #000;
 }
 a.continue_template i{
     font-size: 32px;
@@ -933,8 +965,8 @@ body .swal2-container{
 #card-design-online .menu_main{
     background-color: #0e4477;
     padding: 13px 10px;
-    height: 30px;
-    position: fixed;
+    height: 57px;
+    position: absolute;
     width: 100%;
     z-index: 9;
 }
@@ -1002,80 +1034,24 @@ body .swal2-container{
     text-transform: uppercase;
     font-size: 30px !important;
 }
-
+#mobilemenu{
+  display: none;
+}
+#pricing .title-upgrade{
+    font-size: 30px;
+    color: #555353;
+    text-align: center;
+    line-height: 32px;
+    margin: 20px;
+    font-weight: bold;
+} 
 .custom_color.brick > div{
-    width: 100%;
+      width: 100%;
     padding: 5px;
     background-color: #ffffff;
     cursor: pointer;
     border-radius: 4px;
     border: 1px solid #dcdcdc;
-}
-
-#TB_window  #TB_ajaxContent{
-    padding: 0;
-}
-#TB_window  #TB_title {
-    background: #0e4477;
-    border-bottom: 1px solid transparent;
-    height: 57px;
-}
-#TB_window  #TB_closeWindowButton:focus .tb-close-icon{
-    box-shadow: none;
-}
-#TB_window  .tb-close-icon:before{
-    font-size: 30px;
-}
-#TB_window .display-products,
-#TB_window  #card-design-online{
-    top: -52px;
-}
-#TB_window  .tb-close-icon{
-    z-index: 10;
-    color: #fff;
-    top: 10px;
-    width: 56px;
-    height: 56px;
-    font-size: 38px;
-}
-#TB_window .display-products .control_main{
-    position: fixed;
-    width: 100%;
-    z-index: 9;
-}
-#TB_window .right-canvas {
-    background: #eee;
-    position: fixed;
-    top: 62px;
-    right: 55px;
-    bottom: 0;
-    width: calc(100% - 475px);
-    color: #000;
-    overflow: hidden;
-    padding-top: 10px;
-    z-index: 8;
-}
-#TB_window .right-canvas {
-     width: calc(100% - 280px);
- }
-#TB_window .tools,
-#TB_window .tools-details,
-#TB_window .tools-fonts,
-#TB_window .tools-colors,
-#TB_window .tools-details,
-#TB_window .tools-fonts-details,
-#TB_window .tools-fonts-style,
-#TB_window .tools-fonts-effects,
-#TB_window #card-design-online .left{
-    top: 62px;
-}
-
-#TB_window .filter_categories {
-    display: flex;
-    padding: 15px 10px;
-    position: relative;
-    height: 70px;
-    top: 54px;
 }
 
 .selector-color{
@@ -1086,3 +1062,38 @@ body .swal2-container{
 .list_item_color_solid{
     margin-top: 15px;
 }
+<<<<<<< Updated upstream
+=======
+
+
+@media (max-width: 768px){
+  #mobilemenu{
+  display: inline-block;
+}
+  #card-design-online .menu_main{
+        height: 65px;
+  }
+  #card-design-online .menu_main a{
+       font-size: 15px; 
+       margin-right: 10px;
+  }
+  #card-design-online .show-mobile{
+    display: block !important;
+    width: 100%;
+    top: 65px;
+  }
+  #card-design-online .right-canvas{
+        padding-top: 20px;
+  }
+  #pricing.pricing{
+        overflow: auto;
+    max-height: 80vh;
+    margin-top: 10px;
+  }
+  .tool-icon .scrollmenu {
+    background-color: #fff;
+    overflow: auto;
+    white-space: nowrap;
+}
+}
+>>>>>>> Stashed changes
