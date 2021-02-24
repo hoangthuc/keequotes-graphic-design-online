@@ -1,6 +1,6 @@
 <div class="tool-icon-left">
     <div class="scrollmenu-left">
-        <div class="general-function-left">
+        <div class="general-function-left"> 
 <a class="tablink" onclick="openPage('template')" id="defaultOpen"><img src="<?php echo KGDO_CD_URL; ?>/images/tools/template.svg" width="18px"></a>
 <a class="tablink" onclick="openPage('background')"><img src="<?php echo KGDO_CD_URL; ?>/images/tools/background.svg" width="19px"></a>
 <a class="tablink" onclick="openPage('photo')"><img src="<?php echo KGDO_CD_URL; ?>/images/tools/photo.svg" width="19px"></a>
@@ -13,12 +13,12 @@
 <img src="<?php echo KGDO_CD_URL; ?>/images/loading-gif.svg" />
 </div>
 <div class="contentajax">
-
+    
 </div>
 
 <div id="template" class="sidebarpost">
-  <p>The same set</p>
-  <?php
+  <p>Mẫu thiết kế cùng bộ</p>
+  Kỳ tà<?php
     $related_post = get_post_meta( $post->ID, 'related_post', true );
     $rand_posts = get_posts( array(
         'posts_per_page' => 5,
@@ -30,34 +30,34 @@
             )
         )
     ) );
-
+     
     if ( $rand_posts ) {
-    foreach ( $rand_posts as $post ) :
+    foreach ( $rand_posts as $post ) : 
         setup_postdata( $post );
         ?>
         <p style="width:95%;">
-        <a href="<?php the_permalink(); ?>"><?php
+        <a href="<?php the_permalink(); ?>"><?php 
 	the_post_thumbnail( 'medium' ); ?></a><br>
 <?php the_category(', '); ?></p>
         <?php
-    endforeach;
+    endforeach; 
     wp_reset_postdata();
     }
     ?>
 </div>
 
 <div id="background" class="sidebarpost">
-  <p>Background</p>
+  <p>Hình nền</p>
 </div>
 
 <div id="photo" class="sidebarpost">
-  <p>Photo</p>
+  <p>Hình chụp</p>
 </div>
 
 <div id="element" class="sidebarpost">
-  <p>Element</p>
+  <p>Thành phần thiết kế</p>
   <div class="masonry">
-<?php
+<?php 
 $the_query = new WP_Query( array(
     'post_type' => 'library',
     'posts_per_page' => -1,
@@ -81,11 +81,11 @@ $the_query = new WP_Query( array(
 </div>
 
 <div id="text" class="sidebarpost">
-  <p>Text</p>
+  <p>Nội dung chữ</p>
 </div>
 
 <div id="brand" class="sidebarpost">
-  <p>Brand</p>
+  <p>Thương hiệu</p>
 </div>
 </div>
 

@@ -24,15 +24,15 @@
 //Change View
     function changeView(value) {
         if (view) {
-            $viewText.textContent = "Back";
+            jQueryviewText.textContent = "Back";
             mainCanvas = canvas1;
-            $('#canvas1').parent().css('display', 'block');
-            $('#canvas2').parent().css('display', 'none');
+            jQuery('#canvas1').parent().css('display', 'block');
+            jQuery('#canvas2').parent().css('display', 'none');
         } else {
-            $viewText.textContent = "Front";
+            jQueryviewText.textContent = "Front";
             mainCanvas = canvas2;
-            $('#canvas1').parent().css('display', 'none');
-            $('#canvas2').parent().css('display', 'block');
+            jQuery('#canvas1').parent().css('display', 'none');
+            jQuery('#canvas2').parent().css('display', 'block');
         }
 
         view = !view;
@@ -73,9 +73,9 @@
             }
             config.currentStateIndex = config.canvasState.length-1;
             if((config.currentStateIndex === config.canvasState.length-1) && config.currentStateIndex != -1){
-                $('#redo').prop('disabled', true);
+                jQuery('#redo').prop('disabled', true);
             }
-            $('#undo').prop('disabled', false);
+            jQuery('#undo').prop('disabled', false);
         }
 
     }
@@ -83,16 +83,16 @@
     function updateMementoButtons() {
         console.log(mainCanvas.mementoConfig);
         if ((mainCanvas.mementoConfig.currentStateIndex === mainCanvas.mementoConfig.canvasState.length-1) || (mainCanvas.mementoConfig.currentStateIndex === -1 && mainCanvas.mementoConfig.canvasState.length === 0)) {
-            $('#redo').prop('disabled', true);
+            jQuery('#redo').prop('disabled', true);
         } else {
-            $('#redo').prop('disabled', false);
+            jQuery('#redo').prop('disabled', false);
         }
 
         if (mainCanvas.mementoConfig.currentStateIndex > -1) {
-            $('#undo').prop('disabled', false);
+            jQuery('#undo').prop('disabled', false);
         }
         else {
-            $('#undo').prop('disabled', true);
+            jQuery('#undo').prop('disabled', true);
         }
     }
 
@@ -143,132 +143,132 @@
         console.log(o.target.get('type'));
         activeObject = o.target;
         if(activeObject.isType('textbox')){
-            $(".text-function").show(100);
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".group-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".text-function").show(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".group-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
         if(activeObject.isType('i-text')){
-            $(".text-function").show(100);
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".group-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".text-function").show(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".group-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
         else if(activeObject.isType('image')){
-            $(".image-function").show(100);
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".text-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
-            $(".text-function").hide(100);
-            $(".color-function").hide(100);
-            $(".group-function").hide(100);
+            jQuery(".image-function").show(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".color-function").hide(100);
+            jQuery(".group-function").hide(100);
         }
         else if( activeObject.isType('polygon')){
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".group-function").hide(100);
-            $(".text-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".group-function").hide(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
         else if( activeObject.isType('rect')){
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".group-function").hide(100);
-            $(".text-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".group-function").hide(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
         else if( activeObject.isType('triangle')){
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".group-function").hide(100);
-            $(".text-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".group-function").hide(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
         else if( activeObject.isType('circle')){
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".group-function").hide(100);
-            $(".text-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".group-function").hide(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
         else if( activeObject.isType('path')){
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".group-function").hide(100);
-            $(".text-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".group-function").hide(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
         else if( activeObject.isType('path-group')){
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".text-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
         else if( activeObject.isType('group')){
-            $(".detail-function").show(100);
-            $(".delete-color-function").show(100);
-            $(".general-function").hide(100);
-            $(".image-function").hide(100);
-            $(".color-function").show(100);
-            $(".group-function").show(100);
-            $(".text-function").hide(100);
-            $(".tools-colors").hide(100);
-            $(".tools-details").hide(100);
+            jQuery(".detail-function").show(100);
+            jQuery(".delete-color-function").show(100);
+            jQuery(".general-function").hide(100);
+            jQuery(".image-function").hide(100);
+            jQuery(".color-function").show(100);
+            jQuery(".group-function").show(100);
+            jQuery(".text-function").hide(100);
+            jQuery(".tools-colors").hide(100);
+            jQuery(".tools-details").hide(100);
         }
     }
 
 //Show icons first view
     function onCanvasSelected(o){
-        $(".general-function").show(100);
-        $(".image-function").hide(100);
-        $(".text-function").hide(100);
-        $(".detail-function").hide(100);
-        $(".delete-color-function").hide(100);
-        $(".color-function").hide(100);
-        $(".group-function").hide(100);
-        $(".tools-details").hide(100);
-        $(".tools-fonts").hide(100);
-        $(".tools-colors").hide(100);
-        $(".tools-fonts-details").hide(100);
-        $(".tools-fonts-style").hide(100);
-        $(".tools-fonts-effect").hide();
+        jQuery(".general-function").show(100);
+        jQuery(".image-function").hide(100);
+        jQuery(".text-function").hide(100);
+        jQuery(".detail-function").hide(100);
+        jQuery(".delete-color-function").hide(100);
+        jQuery(".color-function").hide(100);
+        jQuery(".group-function").hide(100);
+        jQuery(".tools-details").hide(100);
+        jQuery(".tools-fonts").hide(100);
+        jQuery(".tools-colors").hide(100);
+        jQuery(".tools-fonts-details").hide(100);
+        jQuery(".tools-fonts-style").hide(100);
+        jQuery(".tools-fonts-effect").hide();
     }
 
     //Flip Just toggling flipX and flipY
@@ -527,10 +527,10 @@
         var fileType = e.target.files[0].type;
         var fd = new FormData();
         console.log(e.target.files[0]);
-        fd.append( "upload_image", $('#photo_file')[0].files[0] );
+        fd.append( "upload_image", jQuery('#photo_file')[0].files[0] );
         fd.append( "action", 'upload_img_wp');
         //Append here your necessary data
-        $.ajax({
+        jQuery.ajax({
             type: 'POST',
             url: ajax_url,
             data: fd,
@@ -576,7 +576,7 @@
 
 
     function download(url, name) {
-        $('#downloader').attr({
+        jQuery('#downloader').attr({
             href: url,
             download: name
         })[0].click();
@@ -668,9 +668,9 @@
     }
 
 
-    jQuery(function($) {
+    jQuery(function(jQuery) {
 
-        $viewText = document.querySelector("#viewText");
+        jQueryviewText = document.querySelector("#viewText");
         canvas1 = new fabric.Canvas('canvas1', {
             preserveObjectStacking: true,
         });
@@ -717,7 +717,7 @@
         changeView(1);
 
 //Redo Undo
-        $('#undo').click(function(undo) {
+        jQuery('#undo').click(function(undo) {
             console.log(mainCanvas.mementoConfig);
             if(mainCanvas.mementoConfig.undoFinishedStatus){
                 if(mainCanvas.mementoConfig.currentStateIndex === -1){
@@ -733,17 +733,17 @@
                             console.log(mainCanvas.mementoConfig.currentStateIndex);
                             mainCanvas.mementoConfig.currentStateIndex -= 1;
                             console.log(mainCanvas.mementoConfig.currentStateIndex);
-                            $('#undo').prop('disabled', false);
+                            jQuery('#undo').prop('disabled', false);
                             if(mainCanvas.mementoConfig.currentStateIndex !== mainCanvas.mementoConfig.canvasState.length-1){
-                                $('#redo').prop('disabled', false);
+                                jQuery('#redo').prop('disabled', false);
                             }
                             mainCanvas.mementoConfig.undoFinishedStatus = 1;
                         }
                         else if(mainCanvas.mementoConfig.currentStateIndex === 0){
                             mainCanvas.clear();
                             mainCanvas.mementoConfig.undoFinishedStatus = 1;
-                            $('#undo').prop('disabled', true);
-                            $('#redo').prop('disabled', false);
+                            jQuery('#undo').prop('disabled', true);
+                            jQuery('#redo').prop('disabled', false);
                             mainCanvas.mementoConfig.currentStateIndex -= 1;
                         }
                     }
@@ -751,10 +751,10 @@
             }
         });
 
-        $('#redo').click(function(redo) {
+        jQuery('#redo').click(function(redo) {
             if(mainCanvas.mementoConfig.redoFinishedStatus){
                 if((mainCanvas.mementoConfig.currentStateIndex === mainCanvas.mementoConfig.canvasState.length-1) && mainCanvas.mementoConfig.currentStateIndex != -1){
-                    $('#redo').prop('disabled', true);
+                    jQuery('#redo').prop('disabled', true);
                 }else{
                     if (mainCanvas.mementoConfig.canvasState.length > mainCanvas.mementoConfig.currentStateIndex && mainCanvas.mementoConfig.canvasState.length != 0){
                         mainCanvas.mementoConfig.redoFinishedStatus = 0;
@@ -767,11 +767,11 @@
                         mainCanvas.mementoConfig.redoStatus = false;
                         mainCanvas.mementoConfig.currentStateIndex += 1;
                         if(mainCanvas.mementoConfig.currentStateIndex != -1){
-                            $('#undo').prop('disabled', false);
+                            jQuery('#undo').prop('disabled', false);
                         }
                         mainCanvas.mementoConfig.redoFinishedStatus = 1;
                         if((mainCanvas.mementoConfig.currentStateIndex === mainCanvas.mementoConfig.canvasState.length-1) && mainCanvas.mementoConfig.currentStateIndex != -1){
-                            $('#redo').prop('disabled', true);
+                            jQuery('#redo').prop('disabled', true);
                         }
                     }
                 }
@@ -780,7 +780,7 @@
 
 
 //Zoom Control
-        $("#zoomin").click(zoomin);
+        jQuery("#zoomin").click(zoomin);
         function zoomin() {
             canvas1.setZoom(canvas1.getZoom() *1.1);
             canvas1.setDimensions({
@@ -794,66 +794,66 @@
             });
         };
 
-        $("#zoomout").click(zoomout);
+        jQuery("#zoomout").click(zoomout);
 
 
-        //Add Text
-                $("#addtext").on("click", function(e) {
-                    text = new fabric.IText("Text", {
-                        id: "cardalltexthex",
-                        fontSize: 32,
-                        selectable: true,
-                        left: 400,
-                        top: 100,
-                        text: "Add A New Short Text",
-                        fill: '#333',
-                        opacity :1,
-                        lineHeight: 1,
-                        textAlign: 'center',
-                        originY: 'center',
-                        originX: 'center',
-                        lockUniScaling: false,
-                        fontFamily: 'Anton'
-                    });
-                    mainCanvas.add(text);
-                });
+//Add Text
+        jQuery("#addtext").on("click", function(e) {
+            text = new fabric.IText("Text", {
+                id: "cardalltexthex",
+                fontSize: 32,
+                selectable: true,
+                left: 400,
+                top: 100,
+                text: "Thêm nội dung một dòng văn bản",
+                fill: '#333',
+                opacity :1,
+                lineHeight: 1,
+                textAlign: 'center',
+                originY: 'center',
+                originX: 'center',
+                lockUniScaling: false,
+                fontFamily: 'Anton'
+            });
+            mainCanvas.add(text);
+        });
 
-                $("#addtextbox").on("click", function(e) {
-                    var t1 = new fabric.Textbox('Add A New\nLong Text', {
-                        fill: '#666',
-                        width: 350,
-                        selectable: true,
-                        left: 400,
-                        top: 100,
-                        fontSize: 42,
-                        textAlign: 'center',
-                        originY: 'center',
-                        originX: 'center',
-                        fixedWidth: 350,
-                        lockUniScaling: false,
-                        fontFamily: 'Open Sans',
-                    });
+        jQuery("#addtextbox").on("click", function(e) {
+            var t1 = new fabric.Textbox('Thêm nội dung\nhai dòng văn bản', {
+                fill: '#666',
+                width: 350,
+                selectable: true,
+                left: 400,
+                top: 100,
+                fontSize: 42,
+                textAlign: 'center',
+                originY: 'center',
+                originX: 'center',
+                fixedWidth: 350,
+                lockUniScaling: false,
+                fontFamily: 'Open Sans',
+            });
 
-                    mainCanvas.add(t1);
-                });
+            mainCanvas.add(t1);
+        });
 
-        //Delect Objects
-        $("#remove").click(removeObjects);
+//Delect Objects
+        jQuery("#remove").click(removeObjects);
 
 //Group object
-        $("#group").click(groupObjects);
+        jQuery("#group").click(groupObjects);
 
 //Unroup object
-        $("#ungroup").click(ungroupObjects);
+        jQuery("#ungroup").click(ungroupObjects);
 
 
 // Clone object
-        $("#clone").click(cloneObjects);
+        jQuery("#clone").click(cloneObjects);
 
 
 //* Align Objects
-        $('.alignment').click(function() {
-            var cur_value = $(this).attr('data-action');
+        jQuery('.alignment').click(function() {
+            var cur_value = jQuery(this).attr('data-action');
             var activeObj = mainCanvas.getActiveObject() || mainCanvas.getActiveGroup();
             if (cur_value != '' && activeObj) {
                 process_align(cur_value, activeObj);
@@ -868,7 +868,7 @@
 
 //Create Mask
 
-        $("#createmark").click(function () {
+        jQuery("#createmark").click(function () {
             var activegroup = mainCanvas.getActiveGroup();
             var objectsInGroup = activegroup.getObjects();
             objectsInGroup.forEach(function(object) {
@@ -892,11 +892,11 @@
         });
 
 // canvas2json
-        $("#canvas2json").click(function() {
+        jQuery("#canvas2json").click(function() {
             var json = {};
             json.c1 = canvas1.toJSON(['selectable', 'id']);
             json.c2 = canvas2.toJSON(['selectable', 'id']);
-            $("#myTextArea").text(JSON.stringify(json));
+            jQuery("#myTextArea").text(JSON.stringify(json));
             var a = document.createElement("a");
             var file = new Blob([JSON.stringify(json)], {
                 type: 'text/plain'
@@ -908,14 +908,14 @@
 
 // Save as image
 
-        $("#download").click(save);
+        jQuery("#download").click(save);
 
     });
 
 function search_template(event,slug='/products',query='&search=') {
-    let s = $(event).val();
+    let s = jQuery(event).val();
     if(s)query = query+s;
-    let post_id = $(event).data('id');
+    let post_id = jQuery(event).data('id');
     let div  = document.querySelector('#template .sidebarpost');
     var settings = {
         "url": setting.URL_API+slug+"?license_key="+setting.K_API+query,
@@ -926,106 +926,100 @@ function search_template(event,slug='/products',query='&search=') {
         },
     };
 
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
         setup_list_item_product(response,'#template .sidebarpost','select_template');
     });
 }
 
-//Load JSON
+    //Load JSON
 function select_template(event){
-let product = $(event).data('product');
-let slug = (product=='user')?'/user/products':'/products';
-load_json( $(event).attr('data-id'),slug ).then(Datajson=>{
-    $('.form_add_new_product [name="product_name"]').val(Datajson.result.name);
-    Datajson=JSON.parse(Datajson.result.data);
-    console.log(Datajson);
-    setting.json_active = setting.json_download = Datajson
-    let Datawidth = Datajson.width;
-    let DataHeight = Datajson.height;
-    back_step('.display-products','#card-design-online');
-    document.querySelector('#canvas1').setAttribute('width',Datawidth);
-    document.querySelector('#canvas2').setAttribute('width',Datawidth);
-    document.querySelector('#canvas1').setAttribute('height',DataHeight);
-    document.querySelector('#canvas2').setAttribute('height',DataHeight);
-    document.querySelector('#templatemessage').setAttribute('data-id', $(event).attr('data-id') );
-    var dataToLoad = Datajson;
-    canvas1.loadFromJSON(
-        dataToLoad.c1,
-        canvas1.renderAll.bind(canvas1),
-    );
-    canvas2.loadFromJSON(
-        dataToLoad.c2,
-        canvas2.renderAll.bind(canvas2),
-    );
-    canvas1.setZoom(canvas1.getZoom() * 1);
-    canvas2.setZoom(canvas2.getZoom() * 1);
-    var originalWidth = Datajson.width;
-    var originalHeight = Datajson.height;
-    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    var height = (window.innerHeight > 0) ? window.innerHeight : screen.Height;
-    var widthRatio = width / originalWidth;
-    var heightRatio = height / originalHeight;
-    if (screen.width < 700) {
-    canvas1.setZoom(canvas1.getZoom() * widthRatio * 0.9);
-    canvas1.setDimensions({
-    width: canvas1.width * widthRatio * 0.9,
-    height: canvas1.height * widthRatio * 0.9,
+    let product = jQuery(event).data('product');
+    let slug = (product=='user')?'/user/products':'/products';
+    load_json( jQuery(event).attr('data-id'),slug ).then(Datajson=>{
+        jQuery('.form_add_new_product [name="product_name"]').val(Datajson.result.name);
+        Datajson=JSON.parse(Datajson.result.data);
+        console.log(Datajson);
+        setting.json_active = setting.json_download = Datajson
+        let Datawidth = Datajson.width;
+        let DataHeight = Datajson.height;
+        back_step('.display-products','#card-design-online');
+        document.querySelector('#canvas1').setAttribute('width',Datawidth);
+        document.querySelector('#canvas2').setAttribute('width',Datawidth);
+        document.querySelector('#canvas1').setAttribute('height',DataHeight);
+        document.querySelector('#canvas2').setAttribute('height',DataHeight);
+        document.querySelector('#templatemessage').setAttribute('data-id', jQuery(event).attr('data-id') );
+        var dataToLoad = Datajson;
+        canvas1.loadFromJSON(
+            dataToLoad.c1,
+            canvas1.renderAll.bind(canvas1),
+        );
+        canvas2.loadFromJSON(
+            dataToLoad.c2,
+            canvas2.renderAll.bind(canvas2),
+        );
+        canvas1.setZoom(canvas1.getZoom() * 1);
+        canvas2.setZoom(canvas2.getZoom() * 1);
+        var originalWidth = 800;
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        var widthRatio = width / originalWidth;
+        if (screen.width < 700) {
+            canvas1.setZoom(widthRatio * 0.9);
+            canvas1.setDimensions({
+                width: Datawidth * widthRatio * 0.9,
+                height: DataHeight * widthRatio * 0.9,
+            });
+            canvas2.setZoom(widthRatio * 0.9);
+            canvas2.setDimensions({
+                width: Datawidth * widthRatio * 0.9,
+                height: DataHeight * widthRatio * 0.9,
+            });
+        }
+        else if (screen.width >= 700 && screen.width < 1024) {
+            canvas1.setZoom(0.6);
+            canvas1.setDimensions({
+                width: Datawidth * 0.6,
+                height: DataHeight * 0.6,
+            });
+            canvas2.setZoom(0.6);
+            canvas2.setDimensions({
+                width: Datawidth * 0.6,
+                height: DataHeight * 0.6,
+            });
+        }
+        else {
+            canvas1.setZoom(0.7);
+            canvas1.setDimensions({
+                width: Datawidth * 0.7,
+                height: DataHeight * 0.7,
+            });
+            canvas2.setZoom(0.7);
+            canvas2.setDimensions({
+                width: Datawidth * 0.7,
+                height: DataHeight * 0.7,
+            });
+        }
+        jQuery(".overlayeditcanvas").hide(200);
+        jQuery(".general-function, a.continue_template").show(200);
+        jQuery(".tools").show(200);
+        jQuery('#templatemessage').keyup();
+        setup_json(Datajson);
     });
-    canvas2.setZoom(canvas2.getZoom() * widthRatio * 0.9);
-    canvas2.setDimensions({
-    width: canvas2.width * widthRatio * 0.9,
-    height: canvas2.height * widthRatio * 0.9,
-    });
+    if(product == 'demo'){
+        jQuery('.save_product_c').hide();
+    }else {
+        jQuery('.save_product_c').show();
     }
-
-    else {
-    if (originalWidth > originalHeight) {
-    canvas1.setZoom(canvas1.getZoom() * widthRatio * 0.6);
-    canvas1.setDimensions({
-    width: originalWidth * widthRatio * 0.6,
-    height: originalHeight * widthRatio * 0.6,
-    });
-    canvas2.setZoom(canvas2.getZoom() * widthRatio * 0.6);
-    canvas2.setDimensions({
-    width: originalWidth * widthRatio * 0.6,
-    height: originalHeight * widthRatio * 0.6,
-    });
-    }
-    else {
-    canvas1.setZoom(canvas1.getZoom() * heightRatio * 0.8);
-    canvas1.setDimensions({
-    width: originalWidth * heightRatio * 0.8,
-    height: originalHeight * heightRatio * 0.8,
-    });
-    canvas2.setZoom(canvas2.getZoom() * heightRatio * 0.8);
-    canvas2.setDimensions({
-    width: originalWidth * heightRatio * 0.8,
-    height: originalHeight * heightRatio * 0.8,
-    });
-    }
-    }
-    $(".overlayeditcanvas").hide(200);
-    $(".general-function, a.continue_template").show(200);
-    $(".tools").show(200);
-    $('#templatemessage').keyup();
-    setup_json(Datajson);
-});
-if(product == 'demo'){
-    $('.save_product_c').hide();
-}else {
-    $('.save_product_c').show();
-}
 }
 async function load_json(id,slug='/products'){
-var settings = {
-    "url": setting.URL_API+slug+'/'+id+'/detail?license_key='+setting.K_API,
-    "method": "GET",
-    "timeout": 0,
-    "headers": {
-        "Accept": "application/json",
-    },
-};
-return $.ajax(settings).done(function (response) {});
+    var settings = {
+        "url": setting.URL_API+slug+'/'+id+'/detail?license_key='+setting.K_API,
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+            "Accept": "application/json",
+        },
+    };
+    return jQuery.ajax(settings).done(function (response) {});
 }
 
 function open_form_save(){
@@ -1033,9 +1027,9 @@ function open_form_save(){
     setting.json_active.c1 = canvas1.toJSON();
     setting.json_active.c2 = canvas2.toJSON();
     upload_img(dataToLoad);
-    $('.overUpdateProduct').show(300);
-    $('.form_add_new_product img').attr('src',canvas_image.toDataURL());
-    $('.form_add_new_product button').attr('onclick','save_canvas()');
+    jQuery('.overUpdateProduct').show(300);
+    jQuery('.form_add_new_product img').attr('src',canvas_image.toDataURL());
+    jQuery('.form_add_new_product button').attr('onclick','save_canvas()');
 }
 
  async function save_canvas(){
@@ -1043,8 +1037,8 @@ function open_form_save(){
         setting.json_active.c1 = canvas1.toJSON();
         setting.json_active.c2 = canvas2.toJSON();
      var file = dataURLtoFile( canvas_image.toDataURL() );
-     var name = $('.form_add_new_product [name="product_name"]').val();
-     var id = $('#templatemessage').attr('data-id');
+     var name = jQuery('.form_add_new_product [name="product_name"]').val();
+     var id = jQuery('#templatemessage').attr('data-id');
         var form = new FormData();
         form.append("cover_image", file, generate_token(45)+'.jpg');
         form.append("name", name);
@@ -1064,7 +1058,7 @@ function open_form_save(){
          "data": form
      };
 
-     $.ajax(settings).done(function (response) {
+     jQuery.ajax(settings).done(function (response) {
          console.log(response);
          Swal.fire({
              position: 'top-end',
@@ -1081,9 +1075,9 @@ async function add_canvas(){
     setting.json_active.c1 = canvas1.toJSON();
     setting.json_active.c2 = canvas2.toJSON();
     upload_img(dataToLoad);
-    $('.form_add_new_product img').attr('src',canvas_image.toDataURL());
-    $('.overUpdateProduct').show(300);
-    $('.form_add_new_product button').attr('onclick','create_product()');
+    jQuery('.form_add_new_product img').attr('src',canvas_image.toDataURL());
+    jQuery('.overUpdateProduct').show(300);
+    jQuery('.form_add_new_product button').attr('onclick','create_product()');
  }
 async function upload_img(dataToLoad){
     var pause = 0;
@@ -1143,7 +1137,7 @@ async function upload_img(dataToLoad){
             canvas_image.renderAll.bind(canvas_image),
             function(o, object) {
            // fabric.log(o, object);
-                 $('.form_add_new_product img').attr('src',canvas_image.toDataURL());
+                 jQuery('.form_add_new_product img').attr('src',canvas_image.toDataURL());
                 return true;
         });
 
@@ -1176,13 +1170,13 @@ function show_image_upsplash(link){
 
 /// set background color solid
 function setBackgroundSolid(event){
-    let color = $(event).data('color');
+    let color = jQuery(event).data('color');
     mainCanvas.backgroundImage = 0;
     mainCanvas.setBackgroundColor(color, mainCanvas.renderAll.bind(mainCanvas));
 }
     /// set background color Gradient
 function setBackgroundGradient(event){
-    var data_img = $(event).data('color');
+    var data_img = jQuery(event).data('color');
     fabric.Image.fromURL(data_img, function (img) {
         if (mainCanvas.width < mainCanvas.height ||  img.width > img.height) {
             mainCanvas.setBackgroundImage(img, mainCanvas.renderAll.bind(mainCanvas), {scaleX: img.height/mainCanvas.height,scaleY: img.height/mainCanvas.height});
@@ -1192,14 +1186,14 @@ function setBackgroundGradient(event){
     mainCanvas.renderAll();
 }
 function setBackgroundRepeat(event){
-        var src = $(event).data('color');
+        var src = jQuery(event).data('color');
         mainCanvas.backgroundImage = 0;
         mainCanvas.setBackgroundColor({source: src, repeat: "repeat"}, function () {mainCanvas.renderAll();
         });
 }
 
 function setBackgroundNormal(event){
-    var data_img = $(event).data('color');
+    var data_img = jQuery(event).data('color');
     fabric.Image.fromURL(data_img, function (img) {
         if (mainCanvas.width < mainCanvas.height ||  img.width > img.height) {
             mainCanvas.setBackgroundImage(img, mainCanvas.renderAll.bind(mainCanvas), {scaleX: img.height/mainCanvas.height,scaleY: img.height/mainCanvas.height});
@@ -1223,7 +1217,7 @@ function generate_token(length){
 
 // add element to canvas
 function add_element_detail(event){
-    let image = $(event).data('image');
+    let image = jQuery(event).data('image');
     fabric.loadSVGFromURL(image, function(objects, options) {
         if(objects.length < 4){
             objects.forEach(function(svg) {
@@ -1240,7 +1234,7 @@ function add_element_detail(event){
 }
 /// add text detail
 function add_text_detail(event){
-    let image = $(event).data('image');
+    let image = jQuery(event).data('image');
     fabric.loadSVGFromURL(image, function(objects, options) {
         var obj = fabric.util.groupSVGElements(objects, options);
         obj.set({left:10,top:10,'active':true});mainCanvas.add(obj);
@@ -1250,7 +1244,7 @@ function add_text_detail(event){
 
 // load data json
 function load_item_json(event){
-    var json_data = $(event).data('json');
+    var json_data = jQuery(event).data('json');
     fabric.util.enlivenObjects(json_data.objects, function(objects) {
         mainCanvas.add(...objects);
     });
@@ -1318,9 +1312,9 @@ function getUrlParameter(sParam,url) {
     }
 
 function changeBackgroundSolid(event){
-    let v=  $(event).val();
-    $(event).prev().data('color',v).css({'background-color':'#ffffff'});
-    $(event).prev().data('color',v).text(v).click();
+    let v=  jQuery(event).val();
+    jQuery(event).prev().data('color',v).css({'background-color':'#ffffff'});
+    jQuery(event).prev().data('color',v).text(v).click();
 }
 // check base64
 function isBase64(str) {
@@ -1333,7 +1327,7 @@ function isBase64(str) {
 function create_product(event){
     var form = new FormData();
     var file = dataURLtoFile( canvas_image.toDataURL() );
-    var name = $('.form_add_new_product [name="product_name"]').val();
+    var name = jQuery('.form_add_new_product [name="product_name"]').val();
     form.append("cover_image", file, 'immage_product_canvas.jpg');
     form.append("name", name);
     form.append("data", JSON.stringify(setting.json_active));
@@ -1351,7 +1345,7 @@ function create_product(event){
         "data": form
     };
 
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
         console.log(response);
         Swal.fire({
             position: 'top-end',
@@ -1366,12 +1360,12 @@ function create_product(event){
 
 /// function get producr for user and demo product
 function click_get_products(event){
-    let product = $(event).data('product');
-    let slug = $(event).data('slug');
-    let insert = document.querySelector( $(event).data('insert') );
+    let product = jQuery(event).data('product');
+    let slug = jQuery(event).data('slug');
+    let insert = document.querySelector( jQuery(event).data('insert') );
     insert.innerHTML= '';
-    $('.control_main > a').removeClass('active');
-    $(event).addClass('active');
+    jQuery('.control_main > a').removeClass('active');
+    jQuery(event).addClass('active');
     var settings = {
         "url": setting.URL_API+slug+"?license_key="+setting.K_API,
         "method": "GET",
@@ -1381,7 +1375,7 @@ function click_get_products(event){
         },
     };
 
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
         let div = document.createElement('div');
         let a  = document.createElement('a');
         div.className = 'brick add-new-product';
@@ -1402,7 +1396,7 @@ function click_get_products(event){
                     close.setAttribute('data-id',el.id);
                     close.setAttribute('onclick','delete_template(this)');
                     div.appendChild(close);
-                    $('.filter_categories').addClass('k-none');
+                    jQuery('.filter_categories').addClass('k-none');
                 }
                 div.className = 'brick';
                 div.setAttribute('product_category_id',el.product_category_id)
@@ -1415,20 +1409,20 @@ function click_get_products(event){
                 insert.appendChild(div);
             });
             if(product == 'demo'){
-            $('.filter_categories').removeClass('k-none');
+            jQuery('.filter_categories').removeClass('k-none');
             }
         }
     });
 }
 
 function insert_canvas(event){
-        $('.insert_media_product i').show();
+        jQuery('.insert_media_product i').show();
         var dataToLoad = { c1:canvas1.toJSON(),c2:canvas2.toJSON()} ;
         setting.json_active.c1 = canvas1.toJSON();
         setting.json_active.c2 = canvas2.toJSON();
         upload_img(dataToLoad);
         setTimeout(function(){
-            $('.insert_media_product i').hide();
+            jQuery('.insert_media_product i').hide();
             let div = document.querySelector('#TB_closeWindowButton');
             if(div){
               //  var dataURL = canvas_image.toDataURL();
@@ -1449,7 +1443,7 @@ function insert_canvas(event){
                     "data": form
                 };
 
-                $.ajax(settings).done(function (response) {
+                jQuery.ajax(settings).done(function (response) {
                    // var i = document.querySelector('#add-design-editor').getAttribute('data-number');
                    // var myContent = tinymce.editors[i].getContent();
                     var img = document.createElement('img');
@@ -1458,10 +1452,10 @@ function insert_canvas(event){
                   // /  console.log(myContent);
                   // / tinymce.editors[i].setContent(myContent+img.outerHTML);
                     wp.media.editor.insert(img.outerHTML );
-                    $('#TB_closeWindowButton').click();
+                    jQuery('#TB_closeWindowButton').click();
                 });
             }else{
-                $('#CloseCard button').click();
+                jQuery('#CloseCard button').click();
             }
         },2000);
     }
@@ -1478,7 +1472,7 @@ function load_template_data_product(Data=''){
         document.querySelector('#canvas2').setAttribute('width',Datawidth);
         document.querySelector('#canvas1').setAttribute('height',DataHeight);
         document.querySelector('#canvas2').setAttribute('height',DataHeight);
-        document.querySelector('#templatemessage').setAttribute('data-id', $(event).attr('data-id') );
+        document.querySelector('#templatemessage').setAttribute('data-id', jQuery(event).attr('data-id') );
         var dataToLoad = Datajson;
         canvas1.loadFromJSON(
             dataToLoad.c1,
@@ -1529,16 +1523,16 @@ function load_template_data_product(Data=''){
                 height: DataHeight * 0.7,
             });
         }
-        $(".overlayeditcanvas,.save_product_c").hide(200);
-        $(".general-function, a.continue_template").show(200);
-        $(".tools").show(200);
-        $('#templatemessage').keyup();
+        jQuery(".overlayeditcanvas,.save_product_c").hide(200);
+        jQuery(".general-function, a.continue_template").show(200);
+        jQuery(".tools").show(200);
+        jQuery('#templatemessage').keyup();
         setup_json(Datajson);
     }
 
     /// delete product template
 function delete_template(event){
-    let id = $(event).attr('data-id');
+    let id = jQuery(event).attr('data-id');
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -1558,27 +1552,27 @@ function delete_template(event){
             },
         };
 
-        $.ajax(settings).done(function (response) {
+        jQuery.ajax(settings).done(function (response) {
             console.log(response);
             Swal.fire(
                 'Deleted!',
                 'Your product has been deleted.',
                 'success'
             );
-            $(event).parent().remove();
+            jQuery(event).parent().remove();
         });
         }
     })
 }
 /// edit resize
 function edit_resize(){
-    setting.json_active.width =  $('#canvaswidth').val();
-    setting.json_active.height =  $('#canvasheight').val();
-    $('.overlayresize').hide(200);
+    setting.json_active.width =  jQuery('#canvaswidth').val();
+    setting.json_active.height =  jQuery('#canvasheight').val();
+    jQuery('.overlayresize').hide(200);
 }
 
 function refresh_img(){
-    $('.form_add_new_product img').attr('src',canvas_image.toDataURL());
+    jQuery('.form_add_new_product img').attr('src',canvas_image.toDataURL());
 }
 
 function download_canvas(event){
@@ -1586,7 +1580,7 @@ function download_canvas(event){
     setting.json_active.c1 = canvas1.toJSON();
     setting.json_active.c2 = canvas2.toJSON();
     upload_img(dataToLoad);
-    $('.download_images > i').show(100);
+    jQuery('.download_images > i').show(100);
     setTimeout(function(){
         var dataURL = canvas_image.toDataURL();
         var name = 'mat-truoc';
@@ -1595,18 +1589,18 @@ function download_canvas(event){
         var dataURL = c.toDataURL();
         var name = 'mat-sau';
         download(dataURL, name + ".png");
-        $('.download_images > i').hide();
+        jQuery('.download_images > i').hide();
     },2000);
 
 }
 function show_upgrade(){
-    $('.overUpgradeAccount').show(300);
+    jQuery('.overUpgradeAccount').show(300);
 }
 
     // General Color
 function changeColorSolid(event){
-        var color = $(event).val();
-        $(event).prev().text(color);
+        var color = jQuery(event).val();
+        jQuery(event).prev().text(color);
         var activeObject = mainCanvas.getActiveObject(),
             activeGroup = mainCanvas.getActiveGroup();
         if (activeObject) {
@@ -1625,7 +1619,7 @@ function changeColorSolid(event){
 //https://1stwebdesigner.com/how-to-add-custom-buttons-to-the-wordpress-tinymce-editor/
 
     function setColorsolid(event){
-       var color = $(event).attr('data-color');
+       var color = jQuery(event).attr('data-color');
         var activeObject = mainCanvas.getActiveObject(),
             activeGroup = mainCanvas.getActiveGroup();
         if (activeObject) {

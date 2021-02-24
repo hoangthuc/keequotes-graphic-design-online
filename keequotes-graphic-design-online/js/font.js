@@ -1,227 +1,227 @@
 // Change Fonts
-$(".OpenSans").on("click", function(e) {
+jQuery(".OpenSans").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Open Sans');
   mainCanvas.renderAll();
 });
 
-$(".OpenSansCondensed").on("click", function(e) {
+jQuery(".OpenSansCondensed").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Open Sans Condensed');
   mainCanvas.renderAll();
 });
 
-$(".Roboto").on("click", function(e) {
+jQuery(".Roboto").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Roboto');
   mainCanvas.renderAll();
 });
-$(".Kufam").on("click", function(e) {
+jQuery(".Kufam").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Kufam');
   mainCanvas.renderAll();
 });
-$(".Montserrat").on("click", function(e) {
+jQuery(".Montserrat").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Montserrat');
   mainCanvas.renderAll();
 });
-$(".Oswald").on("click", function(e) {
+jQuery(".Oswald").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Oswald');
   mainCanvas.renderAll();
 });
-$(".Raleway").on("click", function(e) {
+jQuery(".Raleway").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Raleway');
   mainCanvas.renderAll();
 });
-$(".PlayfairDisplay").on("click", function(e) {
+jQuery(".PlayfairDisplay").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Playfair Display');
   mainCanvas.renderAll();
 });
-$(".NotoSerif").on("click", function(e) {
+jQuery(".NotoSerif").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Noto Serif');
   mainCanvas.renderAll();
 });
-$(".Anton").on("click", function(e) {
+jQuery(".Anton").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Anton');
   mainCanvas.renderAll();
 });
-$(".Arimo").on("click", function(e) {
+jQuery(".Arimo").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Arimo');
   mainCanvas.renderAll();
 });
-$(".YanoneKaffeesatz").on("click", function(e) {
+jQuery(".YanoneKaffeesatz").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Yanone Kaffeesatz');
   mainCanvas.renderAll();
 });
-$(".Lobster").on("click", function(e) {
+jQuery(".Lobster").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Lobster');
   mainCanvas.renderAll();
 });
-$(".DancingScript").on("click", function(e) {
+jQuery(".DancingScript").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Dancing Script');
   mainCanvas.renderAll();
 });
-$(".Pacifico").on("click", function(e) {
+jQuery(".Pacifico").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Pacifico');
   mainCanvas.renderAll();
 });
-$(".Play").on("click", function(e) {
+jQuery(".Play").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Play');
   mainCanvas.renderAll();
 });
-$(".MavenPro").on("click", function(e) {
+jQuery(".MavenPro").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Maven Pro');
   mainCanvas.renderAll();
 });
-$(".AlfaSlabOne").on("click", function(e) {
+jQuery(".AlfaSlabOne").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Alfa Slab One');
   mainCanvas.renderAll();
 });
-$(".PlayfairDisplaySC").on("click", function(e) {
+jQuery(".PlayfairDisplaySC").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Playfair Display SC');
   mainCanvas.renderAll();
 });
-$(".Bangers").on("click", function(e) {
+jQuery(".Bangers").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Bangers');
   mainCanvas.renderAll();
 });
-$(".SigmarOne").on("click", function(e) {
+jQuery(".SigmarOne").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Sigmar One');
   mainCanvas.renderAll();
 });
-$(".Lalezar").on("click", function(e) {
+jQuery(".Lalezar").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Lalezar');
   mainCanvas.renderAll();
 });
-$(".BalooChettan2").on("click", function(e) {
+jQuery(".BalooChettan2").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Baloo Chettan 2');
   mainCanvas.renderAll();
 });
-$(".Trirong").on("click", function(e) {
+jQuery(".Trirong").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Trirong');
   mainCanvas.renderAll();
 });
-$(".Jura").on("click", function(e) {
+jQuery(".Jura").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Jura');
   mainCanvas.renderAll();
 });
-$(".AlegreyaSansSC").on("click", function(e) {
+jQuery(".AlegreyaSansSC").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Alegreya Sans SC');
   mainCanvas.renderAll();
 });
-$(".SairaExtraCondensed").on("click", function(e) {
+jQuery(".SairaExtraCondensed").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Saira Extra Condensed');
   mainCanvas.renderAll();
 });
-$(".Bevan").on("click", function(e) {
+jQuery(".Bevan").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Bevan');
   mainCanvas.renderAll();
 });
-$(".Bungee").on("click", function(e) {
+jQuery(".Bungee").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Bungee');
   mainCanvas.renderAll();
 });
-$(".BungeeInline").on("click", function(e) {
+jQuery(".BungeeInline").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Bungee Inline');
   mainCanvas.renderAll();
 });
-$(".BungeeShade").on("click", function(e) {
+jQuery(".BungeeShade").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Bungee Shade');
   mainCanvas.renderAll();
 });
-$(".BungeeOutline").on("click", function(e) {
+jQuery(".BungeeOutline").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Bungee Outline');
   mainCanvas.renderAll();
 });
-$(".BungeeHairline").on("click", function(e) {
+jQuery(".BungeeHairline").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Bungee Hairline');
   mainCanvas.renderAll();
 });
-$(".AlegreyaSC").on("click", function(e) {
+jQuery(".AlegreyaSC").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Alegreya SC');
   mainCanvas.renderAll();
 });
-$(".Maitree").on("click", function(e) {
+jQuery(".Maitree").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Maitree');
   mainCanvas.renderAll();
 });
-$(".Srisakdi").on("click", function(e) {
+jQuery(".Srisakdi").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Srisakdi');
   mainCanvas.renderAll();
 });
-$(".Thasadith").on("click", function(e) {
+jQuery(".Thasadith").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Thasadith');
   mainCanvas.renderAll();
 });
-$(".Manuale").on("click", function(e) {
+jQuery(".Manuale").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Manuale');
   mainCanvas.renderAll();
 });
-$(".Farsan").on("click", function(e) {
+jQuery(".Farsan").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Farsan');
   mainCanvas.renderAll();
 });
-$(".Dexsarbrushregular").on("click", function(e) {
+jQuery(".Dexsarbrushregular").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Dexsar Brush Regular');
   mainCanvas.renderAll();
 });
-$(".Awesomescript").on("click", function(e) {
+jQuery(".Awesomescript").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Awesome Script');
   mainCanvas.renderAll();
 });
-$(".AmaticSC").on("click", function(e) {
+jQuery(".AmaticSC").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Amatic SC');
   mainCanvas.renderAll();
 });
-$(".Charmonman").on("click", function(e) {
+jQuery(".Charmonman").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Charmonman');
   mainCanvas.renderAll();
 });
-$(".Charm").on("click", function(e) {
+jQuery(".Charm").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Charm');
   mainCanvas.renderAll();
 });
-$(".Srisakdi").on("click", function(e) {
+jQuery(".Srisakdi").on("click", function(e) {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('fontFamily', 'Srisakdi');
   mainCanvas.renderAll();
@@ -397,7 +397,7 @@ function dtSetStyle(object, styleName, value) {
 
 //End Change Font Style
 
-$("#uppercase").click(uppercase);
+jQuery("#uppercase").click(uppercase);
 function uppercase() {
 	var active = mainCanvas.getActiveObject();
 	if (!active) return;
@@ -407,7 +407,7 @@ function uppercase() {
     mainCanvas.renderAll();
 }
 
-$("#lowercase").click(lowercase);
+jQuery("#lowercase").click(lowercase);
 function lowercase() {
 	var active = mainCanvas.getActiveObject();
 	if (!active) return;
@@ -417,35 +417,35 @@ function lowercase() {
     mainCanvas.renderAll();
 }
 
-$("#textaligncenter").on("click", function() {
+jQuery("#textaligncenter").on("click", function() {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('textAlign', 'center');
   mainCanvas.renderAll();
 });
 
-$("#textalignleft").on("click", function() {
+jQuery("#textalignleft").on("click", function() {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('textAlign', 'left');
   mainCanvas.renderAll();
 });
 
-$("#textalignright").on("click", function() {
+jQuery("#textalignright").on("click", function() {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('textAlign', 'right');
   mainCanvas.renderAll();
 });
 
-$("#textalignjustify").on("click", function() {
+jQuery("#textalignjustify").on("click", function() {
     var objtext = mainCanvas.getActiveObject();
   objtext.set('textAlign', 'justify');
   mainCanvas.renderAll();
 });
 
 // TEXT EFFECTS 01
-$("#texteffects01").on("click", function() {
-    $(".tools-fonts-effects").show(300);
-    $(".effects-01").show();
-    $(".tools-fonts-align").hide();
+jQuery("#texteffects01").on("click", function() {
+    jQuery(".tools-fonts-effects").show(300);
+    jQuery(".effects-01").show();
+    jQuery(".tools-fonts-align").hide();
     effects01();
 });
     
@@ -508,13 +508,13 @@ $("#texteffects01").on("click", function() {
     );
     mainCanvas.renderAll();
 };
-$("#effects-01-apply").on("click", function() {
-$(".tools-fonts-effects").hide();
-    $(".effects-01").hide();
-    $(".tools-fonts-style").hide();
+jQuery("#effects-01-apply").on("click", function() {
+jQuery(".tools-fonts-effects").hide();
+    jQuery(".effects-01").hide();
+    jQuery(".tools-fonts-style").hide();
 });
 
-$("#texteffects02").on("click", function() {
+jQuery("#texteffects02").on("click", function() {
     (function() {
   var clipPath = new fabric.Circle({
     radius: 140,
@@ -531,7 +531,7 @@ $("#texteffects02").on("click", function() {
 })()
 });
 var myImg = "https://static.vecteezy.com/system/resources/thumbnails/000/833/504/original/abstract-black-background-with-shining-blue-diagonal-layers.jpg";
-$("#texteffects03").on("click", function addImg(){
+jQuery("#texteffects03").on("click", function addImg(){
     fabric.Image.fromURL(myImg, function(oImg) {
         oImg.set({'left':10});
         oImg.set({'top':10});

@@ -136,10 +136,10 @@ function setup_list_item_symbol(data,dom,func){
                 "Accept": "application/json",
             },
         };
-        $.ajax(settings).done(function (response) {
+        jQuery.ajax(settings).done(function (response) {
             var imageList = response.results;
             console.log(imageList);
-            $.each(imageList, function(i, val) {
+            jQuery.each(imageList, function(i, val) {
                 var image = val;
                 var imageURL = val.urls.thumb;
                 var imageregularURL = val.urls.small;
@@ -164,9 +164,9 @@ function setup_list_item_symbol(data,dom,func){
 
 /// load data type symbol
 function load_data_type(slug,type){
-    $('[data-product-group="'+type+'"] > div').hide();
-    var slug_cat = $('[data-product-group="'+type+'"] [data-loop="type"]').data('slug');
-    var query_cat = $('[data-product-group="'+type+'"] [data-loop="type"]').data('cat');
+    jQuery('[data-product-group="'+type+'"] > div').hide();
+    var slug_cat = jQuery('[data-product-group="'+type+'"] [data-loop="type"]').data('slug');
+    var query_cat = jQuery('[data-product-group="'+type+'"] [data-loop="type"]').data('cat');
     var settings = {
         "url": setting.URL_API+slug+'?license_key='+setting.K_API,
         "method": "GET",
@@ -175,19 +175,19 @@ function load_data_type(slug,type){
             "Accept": "application/json",
         },
     };
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
         if(response){
             setup_list_type_symbol(response,'[data-product-group="'+type+'"] [data-loop="type"] .content',type,slug_cat,query_cat);
-            $('[data-product-group="'+type+'"] [data-loop="type"]').show();
+            jQuery('[data-product-group="'+type+'"] [data-loop="type"]').show();
         };
     });
 }
 
 /// load data categories symbol
 function load_data_cat(slug,type,query){
-    $('[data-product-group="'+type+'"] > div').hide();
-    var slug_item = $('[data-product-group="'+type+'"] [data-loop="categories"]').data('slug');
-    var query_item = $('[data-product-group="'+type+'"] [data-loop="categories"]').data('cat');
+    jQuery('[data-product-group="'+type+'"] > div').hide();
+    var slug_item = jQuery('[data-product-group="'+type+'"] [data-loop="categories"]').data('slug');
+    var query_item = jQuery('[data-product-group="'+type+'"] [data-loop="categories"]').data('cat');
     var settings = {
         "url": setting.URL_API+slug+'?license_key='+setting.K_API+query,
         "method": "GET",
@@ -196,21 +196,21 @@ function load_data_cat(slug,type,query){
             "Accept": "application/json",
         },
     };
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
         if(response){
             console.log(response);
             setup_list_cat_symbol(response,'[data-product-group="'+type+'"] [data-loop="categories"] .content',type,slug_item,query_item);
-            $('[data-product-group="'+type+'"] [data-loop="categories"]').show();
+            jQuery('[data-product-group="'+type+'"] [data-loop="categories"]').show();
         };
     });
 }
 
 /// get data symbol
 function load_data_item(slug,type,query){
-    $('[data-product-group="'+type+'"] > div').hide();
-    var func = $('[data-product-group="'+type+'"] [data-loop="list_item"]').data('func');
+    jQuery('[data-product-group="'+type+'"] > div').hide();
+    var func = jQuery('[data-product-group="'+type+'"] [data-loop="list_item"]').data('func');
     var keyword = getUrlParameter('keyword',query);
-    $('[data-product-group="'+type+'"] [data-loop="list_item"] .content').attr('data-keyword',keyword);
+    jQuery('[data-product-group="'+type+'"] [data-loop="list_item"] .content').attr('data-keyword',keyword);
     var settings = {
         "url": setting.URL_API+slug+"?license_key="+setting.K_API+query,
         "method": "GET",
@@ -219,10 +219,10 @@ function load_data_item(slug,type,query){
             "Accept": "application/json",
         },
     };
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
         setup_list_item_symbol(response,'[data-product-group="'+type+'"] [data-loop="list_item"] .content',func);
     });
-    $('[data-product-group="'+type+'"] [data-loop="list_item"]').show();
+    jQuery('[data-product-group="'+type+'"] [data-loop="list_item"]').show();
 }
 
 // setup list item product
@@ -255,7 +255,7 @@ function get_categories_product(){
             "Accept": "application/json",
         },
     };
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
         let div  = document.querySelector('.filter_categories .list_categories');
         response.result.forEach(cat=>{
             let item = document.createElement('div');
@@ -372,7 +372,7 @@ get_categories_product();
 
 
     function create_background_solid(dom,id){
-        $('[data-product-group="background"] > div').hide();
+        jQuery('[data-product-group="background"] > div').hide();
         var settings = {
             "url": setting.URL_API+"/background-categories?license_key="+setting.K_API+'&background_type_id='+id,
             "method": "GET",
@@ -381,7 +381,7 @@ get_categories_product();
                 "Accept": "application/json",
             },
         };
-        $.ajax(settings).done(function (response) {
+        jQuery.ajax(settings).done(function (response) {
             var div = document.querySelector(dom);
             div.innerHTML = '';
             console.log(response);
@@ -397,7 +397,7 @@ get_categories_product();
             })
             div.appendChild(x);
             div.appendChild(data_color);
-            $('[data-product-group="background"] [data-loop="categories"]').show();
+            jQuery('[data-product-group="background"] [data-loop="categories"]').show();
             x.onchange();
         });
     }
@@ -411,7 +411,7 @@ function create_text_color_solid(dom){
             "Accept": "application/json",
         },
     };
-    $.ajax(settings).done(function (response) {
+    jQuery.ajax(settings).done(function (response) {
         var div = document.querySelector(dom);
         div.innerHTML = '';
         console.log(response);
@@ -435,7 +435,7 @@ function create_text_color_solid(dom){
 }
 
     function onload_background_solid(event,dom='[data-product-group="background"] [data-loop="categories"] .list_item_color_solid',func='setBackgroundSolid(this)'){
-        var id = $(event).val();
+        var id = jQuery(event).val();
         console.log(id);
         var settings = {
             "url": setting.URL_API+"/backgrounds?license_key="+setting.K_API+`&background_category_id=`+id,
@@ -445,7 +445,7 @@ function create_text_color_solid(dom){
                 "Accept": "application/json",
             },
         };
-        $.ajax(settings).done(function (response) {
+        jQuery.ajax(settings).done(function (response) {
             var domain = response.image_server_url+'/';
             var insert = document.querySelector(dom);
             insert.innerHTML= '';

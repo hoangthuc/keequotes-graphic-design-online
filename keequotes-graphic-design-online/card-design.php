@@ -17,32 +17,32 @@ define('KGDO_K_REGISTER','https://keequotes.com/#pricing');
 include_once ('functions.php');
 include_once ('api.php');
 include_once ('tinymce-custom/tinymce-custom-link-class.php');
-add_shortcode('cardonline','f_cardonline');
-function f_cardonline($alt,$content){
+add_shortcode('cardonline','f_kgdo_cardonline');
+function f_kgdo_cardonline($alt,$content){
     include_once ('shortcode.php');
 }
 
 
 // create custom plugin settings menu
-add_action('admin_menu', 'my_cool_plugin_create_menu');
+add_action('admin_menu', 'kgdo_plugin_create_menu');
 
-function my_cool_plugin_create_menu() {
+function kgdo_plugin_create_menu() {
 
     //create new top-level menu
-    add_menu_page('Keequotes', 'Keequotes', 'publish_posts', 'template_keequotes', 'CD_plugin_settings_page' , 'dashicons-tickets-alt',10 );
-    add_submenu_page( 'template_keequotes', 'Templates', 'Templates', 'manage_options', 'template_keequotes','CD_plugin_settings_page');
-    add_submenu_page( 'template_keequotes', 'Setting', 'Setting', 'manage_options', 'setting_plugin','license_plugin_menu');
+    add_menu_page('Keequotes', 'Keequotes', 'publish_posts', 'template_keequotes', 'kgdo_plugin_settings_page' , 'dashicons-tickets-alt',10 );
+    add_submenu_page( 'template_keequotes', 'Templates', 'Templates', 'manage_options', 'template_keequotes','kgdo_plugin_settings_page');
+    add_submenu_page( 'template_keequotes', 'Setting', 'Setting', 'manage_options', 'setting_plugin','kgdo_license_plugin_menu');
 
 }
 
-function CD_plugin_settings_page() {
+function kgdo_plugin_settings_page() {
    ?>
     <div class="wrap">
 <?php echo do_shortcode('[cardonline]');  ?>
     </div>
 <?php }
 
-function license_plugin_menu($option){
+function kgdo_license_plugin_menu($option){
     global $option;
    include_once ('setting.php');
 }
@@ -113,7 +113,6 @@ wp_enqueue_style('fonts-Charm','https://fonts.googleapis.com/css2?family=Charm:w
     wp_enqueue_style( 'CD-style', KGDO_CD_URL.'/css/style.css', array(), null );
 
   wp_enqueue_script( 'sweetalert2.all.min.js', KGDO_CD_URL.'/sweetalert2/dist/sweetalert2.all.min.js' , array(), '20141028', true );
- wp_enqueue_script( 'jquery.min.js', KGDO_CD_URL.'/js/jquery.min.js' , array(), '20141028', true );
  wp_enqueue_script( 'html2canvas.js', 'https://html2canvas.hertzen.com/dist/html2canvas.min.js' , array(), '20141028', true );
     wp_enqueue_script( 'cd-fabric', KGDO_CD_URL.'/js/fabric.min.js' , array(), '20141028' );
     wp_enqueue_script( 'cd-main', KGDO_CD_URL.'/js/main.js' , array(), '20141028' );
