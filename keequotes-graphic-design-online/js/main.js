@@ -912,7 +912,7 @@
 
     });
 
-function search_template(event,slug='/products',query='&search=') {
+function search_template(event,slug='/products',query='&limit=4&search=') {
     let s = jQuery(event).val();
     if(s)query = query+s;
     let post_id = jQuery(event).data('id');

@@ -3,8 +3,8 @@ Contributors: (this should be a list of wordpress.org userid's)
 Tags: comments, spam
 Requires at least: 5.2
 Tested up to: 5.6
-Stable tag: 5.6
-Requires PHP: 7.0
+Stable tag: 1.1
+Requires PHP: 7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 

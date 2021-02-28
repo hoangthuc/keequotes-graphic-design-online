@@ -46,19 +46,19 @@ function kgdo_license_plugin_menu($option){
     global $option;
    include_once ('setting.php');
 }
-function r_set(){
-    register_setting( 'setting_plugin', 'email_keequotes','check_email' );
-    register_setting( 'setting_plugin', 'key_keequotes', 'check_license' );
+function kgdo_r_set(){
+    register_setting( 'setting_plugin', 'email_keequotes','kgdo_check_email' );
+    register_setting( 'setting_plugin', 'key_keequotes', 'kgdo_check_license' );
     if(!KGDO_K_API)add_settings_error('setting_plugin_error',
         esc_attr('settings_updated'),
         sprintf(  __('<div>Welcome back!<br/> <a>Log in</a> with your account on Setting and use the Editor to edit Templates here.<br/> Or you can <a href="%s" target="_blank">Register</a> a new account. It’s Free. </div>'),KGDO_K_REGISTER ),
         'warning');
 }
-add_action('admin_init','r_set');
+add_action('admin_init','kgdo_r_set');
 
 
 /// style  && script
-function CD_styles_scripts() {
+function kgdo_CD_styles_scripts() {
     //fonts
     wp_enqueue_style( 'fonts-Roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap', array(), null );
     wp_enqueue_style( 'fonts-Kufam', 'https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', array(), null );
@@ -120,7 +120,7 @@ wp_enqueue_style('fonts-Charm','https://fonts.googleapis.com/css2?family=Charm:w
     wp_enqueue_script( 'cd-font', KGDO_CD_URL.'/js/font.js' , array(), '20141028' );
     wp_enqueue_script( 'cd-library', KGDO_CD_URL.'/js/library.js' , array(), '20141028');
 }
-add_action( 'CD_enqueue_scripts', 'CD_styles_scripts' );
+add_action( 'CD_enqueue_scripts', 'kgdo_CD_styles_scripts' );
 add_action( 'media_buttons', function($editor_id){
     ob_start();
     add_thickbox();
@@ -171,9 +171,8 @@ add_action( 'media_buttons', function($editor_id){
     return $resulf;
     ob_end_clean();
 } );
-
-add_action('enqueue_block_editor_assets', 'block_editor_text_highlight_button');
-function block_editor_text_highlight_button() {
+add_action('enqueue_block_editor_assets', 'kgdo_block_editor_text_highlight_button');
+function kgdo_block_editor_text_highlight_button() {
     ob_start();
     add_thickbox();
     ?>

@@ -9,8 +9,8 @@ function KGDO_upload_dir_filter($uploads){
 }
 add_filter('upload_dir', 'KGDO_upload_dir_filter');
 add_theme_support( 'post-thumbnails' );
-    add_action('wp_ajax_upload_img_wp', 'f_upload_img_wp');
-    function f_upload_img_wp()
+    add_action('wp_ajax_upload_img_wp', 'kgdo_f_upload_img_wp');
+    function kgdo_f_upload_img_wp()
     {
         if(isset($_FILES['upload_image']) && is_uploaded_file($_FILES['upload_image']['tmp_name'])){
             $file = $_FILES['upload_image'];
@@ -40,17 +40,8 @@ add_theme_support( 'post-thumbnails' );
 
         die();
     }
-
-    function get_data_api($slug)
-    {
-        $response = wp_remote_get( KGDO_URL_API.$slug );
-        $response     = wp_remote_retrieve_body( $response );
-        $response = json_decode($response);
-        return $response;
-    }
-
 /// get info license
-    function check_license_plugin($key)
+    function kgdo_check_license_plugin($key)
     {
         $response = wp_remote_get( KGDO_URL_API . '/user/license-info?license_key='.$key );
         $response     = wp_remote_retrieve_body( $response );
@@ -65,9 +56,9 @@ add_theme_support( 'post-thumbnails' );
     }
 
 /// check info license
-    function check_license($value)
+    function kgdo_check_license($value)
     {
-        $check = check_license_plugin($value);
+        $check = kgdo_check_license_plugin($value);
 
         if ($check->error) {
             add_settings_error('setting_plugin_error', esc_attr('settings_updated'), __($check->error), 'error');
@@ -78,7 +69,7 @@ add_theme_support( 'post-thumbnails' );
         return $value;
     }
 
-    function check_email($value)
+    function kgdo_check_email($value)
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             add_settings_error('setting_plugin_error', esc_attr('settings_updated'), __($value . ' is not a valid email address'), 'error');

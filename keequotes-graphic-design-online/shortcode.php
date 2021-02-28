@@ -1,6 +1,6 @@
 <?php
 do_action('CD_enqueue_scripts');
-$check = check_license_plugin(KGDO_K_API);
+$check = kgdo_check_license_plugin(KGDO_K_API);
 $date = date('Y-m-d');
 $li = $check->license->ended_at;
 ?>
