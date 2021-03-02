@@ -1,92 +1,54 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Tags: comments, spam
-Requires at least: 5.2
-Tested up to: 5.6
-Stable tag: 1.1
-Requires PHP: 7.1
+=== Keequotes – Graphic Design Online ===
+Contributors: Liam
+Tags: brand, marketing, graphic, design, identity, logo, banner, business, card, digital, photos, media library, canva, stencil, Visme,Adobe,Spark,Design,Wizard,Easil,Snappa,Crello,PicMonkey, designbold, design template, free stock photo.
+Requires at least: 4.7
+Tested up to: 5.6.2
+Stable tag: /trunk/
+Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Create beautiful designs with 10000+ templates and stock elements. Download or insert your designs into WordPress Editor.
 
 == Description ==
 
-Create beautiful designs with 10000+ templates and stock elements. Download or insert your designs into Wordpress Editor.
+https://www.youtube.com/watch?v=TVFCzaIWsZY
 
-A few notes about the sections above:
+The plugin help users edit or design the graphic templates such as brand logo, poster, website ads banner then insert to writing editor to use them like a media.
 
-*   "Contributors" is a comma separated list of wordpress.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+You can open **[Keequotes](https://www.keequotes.com)** Editor directly from Post/Page Editor then import the results to Writing editor. 
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+We are working hard to build the rich template gallery and the abundant library to help users get more and more nice design.
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+== Installation ==
+
+1. Upload the entire `keequotes-graphic-design-online` folder to the `/wp-content/plugins/` directory.
+1. Activate the plugin.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Can I use for it free =
 
-An answer to that question.
+Yes, It's totally free! However, we have the Pro Package.
 
-= What about foo bar? =
+= How about the Pro Package? =
 
-Answer to foo bar dilemma.
+Users have more Premium Library and thay can save their edited tempates to our server.
+
+= What does it cost? =
+
+Please check the price on **[Keequotes](https://www.keequotes.com/#pricing)**.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is stored in the /assets directory.
-2. This is the second screen shot
+1. Template Gallery
+2. Editor
+3. Writing Editor
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+= 1.1.0 =
+Initial release of the very first plugin
 
 == Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](https://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: https://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+If we have any updates, we will inform.
