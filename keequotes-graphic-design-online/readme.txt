@@ -3,7 +3,7 @@ Contributors: Liam
 Tags: brand, marketing, graphic, design, identity, logo, banner, business, card, digital, photos, media library, canva, stencil, Visme,Adobe,Spark,Design,Wizard,Easil,Snappa,Crello,PicMonkey, designbold, design template, free stock photo.
 Requires at least: 4.7
 Tested up to: 5.6.2
-Stable tag: /trunk/
+Stable tag: 1.1.0
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
