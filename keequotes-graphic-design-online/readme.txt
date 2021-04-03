@@ -2,7 +2,7 @@
 Contributors: Liam
 Tags: brand, marketing, graphic, design, identity, logo, banner, business, card, digital, photos, media library, canva, stencil, Visme,Adobe,Spark,Design,Wizard,Easil,Snappa,Crello,PicMonkey, designbold, design template, free stock photo.
 Requires at least: 4.7
-Tested up to: 5.6.2
+Tested up to: 5.7
 Stable tag: 1.1.0
 Requires PHP: 5.2.4
 License: GPLv2 or later
@@ -12,11 +12,11 @@ Create beautiful designs with 10000+ templates and stock elements. Download or i
 
 == Description ==
 
-https://www.youtube.com/watch?v=TVFCzaIWsZY
+https://www.youtube.com/watch?v=CCYM2-GR1HM
 
 The plugin help users edit or design the graphic templates such as brand logo, poster, website ads banner then insert to writing editor to use them like a media.
 
-You can open **[Keequotes](https://www.keequotes.com)** Editor directly from Post/Page Editor then import the results to Writing editor. 
+You can open **[Keequotes](https://www.keequotes.com)** Editor directly from Post/Page Editor then import the results to Writing editor.
 
 We are working hard to build the rich template gallery and the abundant library to help users get more and more nice design.
 

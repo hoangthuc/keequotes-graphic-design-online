@@ -29,9 +29,15 @@ add_action('admin_menu', 'kgdo_plugin_create_menu');
 function kgdo_plugin_create_menu() {
 
     //create new top-level menu
+    if(KGDO_K_API){
     add_menu_page('Keequotes', 'Keequotes', 'publish_posts', 'template_keequotes', 'kgdo_plugin_settings_page' , 'dashicons-tickets-alt',10 );
     add_submenu_page( 'template_keequotes', 'Templates', 'Templates', 'manage_options', 'template_keequotes','kgdo_plugin_settings_page');
     add_submenu_page( 'template_keequotes', 'Setting', 'Setting', 'manage_options', 'setting_plugin','kgdo_license_plugin_menu');
+    }
+    else {
+    add_menu_page('Keequotes', 'Keequotes', 'publish_posts', 'setting_plugin', 'kgdo_license_plugin_menu' , 'dashicons-tickets-alt',10 );
+    add_submenu_page( 'template_keequotes', 'Setting', 'Setting', 'manage_options', 'setting_plugin','kgdo_license_plugin_menu');
+    }
 
 }
 

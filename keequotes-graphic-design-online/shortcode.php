@@ -2,7 +2,7 @@
 do_action('CD_enqueue_scripts');
 $check = kgdo_check_license_plugin(KGDO_K_API);
 $date = date('Y-m-d');
-$li = $check->license->ended_at;
+$check_time = strtotime($check->license->ended_at);
 ?>
 <div class="display-products content" style="min-height: 100vh; position: relative; z-index: 9; background-color: #fff">
     <div class="blogcontent">
@@ -24,9 +24,9 @@ $li = $check->license->ended_at;
     <div class="menu_main">
         <a href="javascript:back_step('#card-design-online','.display-products');">Template gallery</a>
         <?php if( isset($check->success) ): ?>
-        <a onclick="<?php echo ($check->license->ended_at > date('Y-m-d') )?'add_canvas();':'show_upgrade()';  ?>">Create template</a>
-        <a onclick="<?php echo ($check->license->ended_at > date('Y-m-d') )?'open_form_save();':'show_upgrade()';  ?>" class="save_product_c">Save template</a>
-        <a onclick="<?php echo ($check->license->ended_at > date('Y-m-d') )?'download_canvas();':'show_upgrade()';  ?>" class="download_images">Download Image <i class="fa fa-spinner fa-spin" style="font-size:20px;display: none"></i></a>
+        <a onclick="<?php echo ($check_time > time() )?'add_canvas();':'show_upgrade()';  ?>">Create template</a>
+        <a onclick="<?php echo ($check_time > time() )?'open_form_save();':'show_upgrade()';  ?>" class="save_product_c">Save template</a>
+        <a onclick="<?php echo ($check_time > time() )?'download_canvas();':'show_upgrade()';  ?>" class="download_images">Download Image <i class="fa fa-spinner fa-spin" style="font-size:20px;display: none"></i></a>
         <?php endif; ?>
         <a onclick="insert_canvas(this);" class="insert_media_product" >Insert media <i class="fa fa-spinner fa-spin" style="font-size:20px;display: none"></i></a>
     </div>
